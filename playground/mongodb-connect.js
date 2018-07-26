@@ -28,5 +28,13 @@ MongoClient.connect(url, (err, client) => {
         console.log(JSON.stringify(result.ops, undefined, 2));
     });
 
+    db.collection('Todos').delete({name: 'Jordan'}).then((docs) => {
+        console.log(JSON.stringify(docs, undefined, 2));
+    });
+
+    db.collection('Todos').find({name: 'Jordan'}).then((docs) => {
+        console.log(JSON.stringify(docs, undefined, 2));
+    });
+
     client.close();
 });
