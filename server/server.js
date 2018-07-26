@@ -5,15 +5,21 @@ mongoose.connect('mongodb://localhost:27017/TodoApp');
 
 var Users = mongoose.model('Users', {
     name: {
-        type: String
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1
     },
     age: {
-        type: Number
+        type: Number,
+        required: true,
+        trim: true,
+        minlength: 1
     }
 });
 
 var newUser = new Users({
-    name: 'Albert Einstein',
+    name: '   Albert Einstein  ',
     age: 139
 });
 
